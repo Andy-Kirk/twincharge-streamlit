@@ -1,20 +1,22 @@
-# Twin Charging Calculator — Full Package
+# Twin Charging Calculator — Full Package (Username + Password)
 
-Includes:
-- **Air System Library** (Turbo & Supercharger CSV uploaders, model selectors, interpolation, turbo map & SC plot)
-- **Engine & Thermal** chain (Turbo → IC1 → SC → IC2) with gauge vs absolute, unit toggles
-- **Pump Helper** (presets, CSV upload/paste) + **Extended Pipe Calculator** with graphs and operating points
-- **CSV Export** of all key results
+Now includes a username **and** password login using Streamlit Secrets.
+
+## Set credentials (Streamlit Cloud)
+- App → **⋯ → Settings → Secrets**:
+```
+APP_USER = "yourUser"
+APP_PASSWORD = "change-me"
+```
+If either secret is missing, the app runs **without** a login (handy for local dev).
 
 ## Run locally
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
-Then open http://localhost:8501
 
-## Optional password
-Create `.streamlit/secrets.toml` with:
-```
-APP_PASSWORD = "change-me"
-```
+## Files
+- `app.py` – app code (with auth gate)
+- `requirements.txt`
+- `.streamlit/secrets.toml.example` – local dev example
